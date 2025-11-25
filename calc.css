@@ -1,0 +1,56 @@
+body{
+    background-image: url("High-resolution\ abst.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+#container{
+    text-align: center;
+    font-size: 2em;
+}
+#firstNum{
+    text-align: center;
+    font-size: 30px;
+
+}
+#secondNum{
+    text-align: center;
+    font-size: 30px;
+
+}
+#button{
+    text-align: center;
+    font-size: 35px;
+    font-family:Arial, Helvetica, sans-serif;
+    padding:1%;
+    border:none;
+    border-radius: 4%;
+    color:rgb(0, 0, 0);
+    background-image: linear-gradient(to right, #AD6B03 , #D48203 , #ED9204, #FA9A04);
+    cursor:pointer;
+}
+#button:hover{
+
+    color : white;
+    font-family:Arial, Helvetica, sans-serif;
+    background-image: linear-gradient(to right,#6E4302, #AD6B03 , #D48203 , #ED9204);
+    
+
+}
+#answer{
+    text-align: center;
+    font-size: 30px;
+}
+
+#answer1{
+    color:rgb(14, 158, 96);
+    text-align: center;
+    font-size: 25px;
+
+}
+
+#answer2{
+    color:rgb(255, 0, 0);
+    text-align: center;
+    font-size: 25px;
+}
