@@ -1,5 +1,4 @@
-
-
+//God Bless You!
 const addition = document.getElementById("addition");
 const subtraction = document.getElementById("subtraction");
 const multiplication = document.getElementById("multiplication");
@@ -13,32 +12,69 @@ let calculatedAnswer = 0;
 
 getAnswer.onclick = function(){
 
-    const firstNumber = Number(document.getElementById("firstNum").value);
-    const secondNumber = Number(document.getElementById("secondNum").value);
-    const inputAnswer = Number(document.getElementById("answer").value);
+    let firstNumber = document.getElementById("firstNum").value;
+    let secondNumber = document.getElementById("secondNum").value;
+    let inputAnswer = document.getElementById("answer").value;
 
+    if(firstNumber===""){
+
+        complement2.textContent = `👎 You haven't input the first number (ඔබ පළමු අංකය ඇතුළත් කර නැත)`;
+        return;
+    }
+
+    else if(secondNumber===""){
+
+        complement2.textContent = `👎 You haven't input the second number (ඔබ දෙවන අංකය ඇතුළත් කර නැත)`;
+        return;
+
+    }
+    else if (isNaN(firstNumber) || isNaN(secondNumber)) {
+        complement2.textContent = `👎 Please enter a valid number (කරුණාකර වලංගු අංකයක් ඇතුළත් කරන්න)`;
+        return;
+    }
+
+    firstNumber = Number(firstNumber);
+    secondNumber = Number(secondNumber);
+    inputAnswer = Number(inputAnswer);
+    
     if(addition.checked){
 
         calculatedAnswer =  firstNumber + secondNumber;
-        console.log(calculatedAnswer);
 
     }
 
-    if(subtraction.checked){
+    else if(subtraction.checked){
 
         calculatedAnswer =  firstNumber - secondNumber;
 
     }
 
-    if(multiplication.checked){
+    else if(multiplication.checked){
 
         calculatedAnswer = firstNumber * secondNumber;
 
     }
 
-    if(division.checked){
+    else if(division.checked){
 
-        calculatedAnswer = Number((firstNumber / secondNumber).toFixed(2));
+        if(secondNumber==0){
+
+            complement2.textContent = `👎 Second number can't be Zero. We can't divide a number by Zero (දෙවන සංඛ්‍යාව ශුන්‍ය විය නොහැක. අපට සංඛ්‍යාවක් ශුන්‍යයෙන් බෙදිය නොහැක)`;
+            return;
+
+        }
+        else{
+
+            calculatedAnswer = Number((firstNumber / secondNumber).toFixed(2));
+
+        }
+
+
+    }
+    else{
+
+         complement2.textContent = `👨🏻‍💻 Please select an operator (කරුණාකර ලකුණ තෝරන්න)`;
+         return;
 
 
     }
